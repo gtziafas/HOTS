@@ -20,7 +20,7 @@ This will generate two sub-folders, namely: a) *object*, that containts object-l
 
 The object-level directory structure follows the classic *ImageFolder* class-per-folder style:
 ```bash
-#  - object
+#  - ./HOTS/object
 #      - apple
 #        - 0.png
 #        - 1.png
