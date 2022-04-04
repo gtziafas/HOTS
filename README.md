@@ -92,5 +92,8 @@ Semantic / Instance Segmentation
 #        - ...
 #    - class_names.txt
 ``` 
+The *Visualization* folders contain the RGB data with drawn annotations for each task
+| Object Detection | Semantic Segmentation | Instance Segmentation  |
+| :-----: |:-----:| :-----:|
+| <img src="assets/obj_det.gif" width="330"/> | <img src="assets/sem_segm.gif" width="330"/> |<img src="assets/inst_segm.gif" width="330"/> |
 
-<img src="assets/obj_det.gif" width="250"/> <img src="assets/sem_segm.gif" width="250"/> <img src="assets/inst_segm.gif" width="250"/> 
