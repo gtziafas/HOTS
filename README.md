@@ -38,8 +38,10 @@ The object-level directory structure follows the classic *ImageFolder* class-per
 ```
 
 The scene-level directory follows the VOC-style structure for each task
+
+Image data
 ```bash
-#  - scene
+#  - ./HOTS/scene
 #    - RGB
 #      - kitchen_5_top_raw_0.png
 #      - ...
@@ -48,6 +50,11 @@ The scene-level directory follows the VOC-style structure for each task
 #      - kitchen_5_top_raw_0.npy
 #      - ...
 #      - table_8_top_raw_9.npy
+```
+
+Object Detection
+```bash
+#  - ./HOTS/scene
 #    - ObjectDetection
 #      - Annotations
 #        - kitchen_5_top_raw_0.xml
@@ -56,6 +63,11 @@ The scene-level directory follows the VOC-style structure for each task
 #        - kitchen_5_top_raw_0.jpg
 #        - ...
 #      - class_names.txt
+```
+
+Semantic Segmentation
+```bash
+#  - ./HOTS/scene
 #    - SemanticSegmentation
 #      - SegmentationClass
 #        - kitchen_5_top_raw_0.npy
@@ -67,6 +79,11 @@ The scene-level directory follows the VOC-style structure for each task
 #        - kitchen_5_top_raw_0.jpg
 #        - ...
 #      - class_names.txt
+```
+
+Instance Segmentation
+```bash
+#  - ./HOTS/scene
 #    - InstanceSegmentation
 #      - SegmentationObject
 #        - kitchen_5_top_raw_0.npy
