@@ -12,10 +12,7 @@ The dataset enumerates a total of 46 object instances organized as
 | Material | 7      |    organic(6), paper(7), ceramic(5), aluminium(5), glass(1), metal(8), plastic(14) |
 
 ## Data Structure
-Run the download script to retrieve the dataset. 
-```bash
-python download_dataset.py --source_dir PATH_TO_REPO_ROOT
-```
+Download and unzip the dataset from [here](https://drive.google.com/file/d/1dldyn6CnUe_K-eDqr5lKmcIq1FkAp-Or/view?usp=sharing)
 This will generate two sub-folders, namely: a) *object*, that containts object-level RGB-D images aimed for object recognition task, cropped from the original scene frames according to their bounding box annotation, and b) *scene*, that contains scene-level RGB-D images, organized by title in different splits according to the type of objects appearing (table, kitchen, office, mix). Annotations contain bounding boxes for object detection and pixel-level masks for semantic / instance segmentation tasks.
 
 The object-level directory structure follows the classic *ImageFolder* class-per-folder style:
