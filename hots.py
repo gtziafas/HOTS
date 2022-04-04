@@ -22,13 +22,14 @@ class HOTSScenesDataset(Dataset):
         self.root = root 
         self.transforms = transforms 
         self.images = sorted(os.listdir(os.path.join(root, "rgb")))
-        self.masks = sorted(os.listdir(os.path.join(root, "mask/SegmentationClass")))
+        self.class_masks = sorted(os.listdir(os.path.join(root, "mask/SegmentationClass")))
+        self.inst_masks = sorted(os.listdir(os.path.join(root, "mask/SegmentationObject")))
 
     def __getitem__(self, idx: int) -> SceneSample:
         # load images and masks
         img_path = os.path.join(self.root, "rgb", self.images[idx])
-        class_mask_path = os.path.join(self.root, "mask/SegmentationClass", self.masks[idx])
-        inst_mask_path = os.path.join(self.root, "mask/SegmentationClass", self.masks[idx])
+        class_mask_path = os.path.join(self.root, "mask/SegmentationClass", self.class_masks[idx])
+        inst_mask_path = os.path.join(self.root, "mask/SegmentationObject", self.inst_masks[idx])
         
         img = cv2.cvtColor(cv2.imread(img_path), cv2.COLOR_BGR2RGB)
         class_mask = np.load(class_mask_path)
@@ -53,10 +54,12 @@ class HOTSScenesDataset(Dataset):
 
         boxes = np.array(boxes)
         area = (boxes[:, 3] - boxes[:, 1]) * (boxes[:, 2] - boxes[:, 0])
+        image_id = idx
+        img_size = img.shape[0:2]
 
         # convert everything into a torch.Tensor if desired
         if self.transforms is not None:
-            H, W = img.shape[0:2]
+            H, W = img_size
             img = self.transforms(img)
             boxes = [[xmin/W, ymin/H, xmax/W, ymax/H] for xmin, ymin, xmax, yman in boxes]
             boxes = torch.as_tensor(boxes, dtype=torch.float32)
@@ -82,10 +85,10 @@ class HOTSScenesDataset(Dataset):
         return len(self.images)
 
 
-def load_HOTS_scenes(transform=False):
+def load_HOTS_scenes(root='./HOTS_v1', transform=False):
     if isinstance(transform, bool):
         transform = None if not transform else ToTensor()
-    dataset = HOTSScenesDataset('./HOTS_v1/scene', transform)
+    dataset = HOTSScenesDataset(os.path.join(root, 'scene'), transform)
     # random split
     num_test = ceil(len(dataset) * 0.2)
     indices = sample(list(range(len(dataset))), len(dataset))
@@ -94,9 +97,9 @@ def load_HOTS_scenes(transform=False):
     return dataset, dataset_test
 
 
-def load_HOTS_objects(transform=False):
+def load_HOTS_objects(root='./HOTS_v1/', transform=False):
     if isinstance(transform, bool):
         transform = None if not transform else ToTensor()
-    dataset = ImageFolder('./HOTS_v1/train', transform=transform)
-    dataset_test = ImageFolder('./HOTS_v1/test', transform=transform)
+    dataset = ImageFolder(os.path.join(root, 'object', 'train'), transform=transform)
+    dataset_test = ImageFolder(os.path.join(root, 'object', 'test'), transform=transform)
     return dataset, dataset_test
