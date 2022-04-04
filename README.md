@@ -41,10 +41,6 @@ Image data
 #      - kitchen_5_top_raw_0.png
 #      - ...
 #      - table_8_top_raw_9.png
-#    - Depth
-#      - kitchen_5_top_raw_0.npy
-#      - ...
-#      - table_8_top_raw_9.npy
 ```
 
 Object Detection
