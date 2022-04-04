@@ -64,7 +64,7 @@ Object Detection
 #        - ...
 #      - class_names.txt
 ```
-![Alt Text](assets/obj_det.gif)
+Annotation folder contains the bounding box coordinates in RGB frame.
 
 Semantic / Instance Segmentation
 ```bash
@@ -92,7 +92,7 @@ Semantic / Instance Segmentation
 #        - ...
 #    - class_names.txt
 ``` 
-The *Visualization* folders contain the RGB data with drawn annotations for each task
+The -Class folder contains raw pixel-level masks using the unique index of each class (as ordered in class_names.txt) or instance. The -PNG folder ommits the background and show coloured version of the pixel-level annotations. The *Visualization* folders contain the RGB data with drawn annotations for each task
 | Object Detection | Semantic Segmentation | Instance Segmentation  |
 | :-----: |:-----:| :-----:|
 | <img src="assets/obj_det.gif" width="330"/> | <img src="assets/sem_segm.gif" width="330"/> |<img src="assets/inst_segm.gif" width="330"/> |
