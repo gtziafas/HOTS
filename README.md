@@ -64,7 +64,6 @@ Object Detection
 #        - ...
 #      - class_names.txt
 ```
-Annotation folder contains the bounding box coordinates in RGB frame.
 
 Semantic / Instance Segmentation
 ```bash
