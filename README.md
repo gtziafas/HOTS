@@ -11,3 +11,23 @@ The dataset enumerates a total of 46 object instances organized as
 | Category    | 25   |   apple(1), banana(1), book(3), bowl(1), soda can(5), cup(3), fork(2), juice box(3), keyboard(1), knife(1), laptop(1), lemon(1), marker(2), milk box(2), monitor(1), mouse(2), orange(1), peach(1), pear(1), pen(3), plate(2), pringles box(3), scissors(2), spoon(2), stapler(1)   |
 | Color | 11      |    red(6), yellow(4), blue(5), white(6), purple(2), green(4), black(9), transparent(1), silver(6), orange(2), pink(1) |
 | Material | 7      |    organic(6), paper(7), ceramic(5), aluminium(5), glass(1), metal(8), plastic(14) |
+
+# Data Structure
+
+```bash
+# This will generate a HOTS directory in the root of the repo following a VOC-like structure:
+#  - object
+#
+#     - apple
+#       - 0.png
+#       - 1.png
+#       - ...
+#      ...
+#     - stapler
+#        - 0.png
+#        - 1.png
+#        - ...
+#   - data_dataset_voc/JPEGImages
+#   - data_dataset_voc/SegmentationClass
+#   - data_dataset_voc/SegmentationClassVisualization
+./labelme2voc.py data_annotated data_dataset_voc --labels labels.txt
