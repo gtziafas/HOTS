@@ -64,6 +64,7 @@ Object Detection
 #        - ...
 #      - class_names.txt
 ```
+![Alt Text](assets/obj_det.gif)
 
 Semantic / Instance Segmentation
 ```bash
