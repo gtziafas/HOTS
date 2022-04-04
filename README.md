@@ -55,6 +55,7 @@ The scene-level directory follows the VOC-style structure for each task
 #      - AnnotationsVisualization
 #        - kitchen_5_top_raw_0.jpg
 #        - ...
+#      - class_names.txt
 #    - SemanticSegmentation
 #      - SegmentationClass
 #        - kitchen_5_top_raw_0.npy
@@ -65,6 +66,7 @@ The scene-level directory follows the VOC-style structure for each task
 #      - SegmentationClassVisualization
 #        - kitchen_5_top_raw_0.jpg
 #        - ...
+#      - class_names.txt
 #    - InstanceSegmentation
 #      - SegmentationObject
 #        - kitchen_5_top_raw_0.npy
@@ -75,4 +77,5 @@ The scene-level directory follows the VOC-style structure for each task
 #      - SegmentationObjectVisualization
 #        - kitchen_5_top_raw_0.jpg
 #        - ...
+#      - class_names.txt
 ``` 
