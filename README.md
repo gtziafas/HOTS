@@ -17,7 +17,7 @@ Run the download script to retrieve the dataset.
 ```bash
 python download_dataset.py --source_dir PATH_TO_REPO_ROOT
 ```
-This will generate two sub-folders, namely: a) *object*, that containts object-level RGB-D images, cropped from the original scene frames according to their bounding box annotation, and, b) *scene*, that contains scene-level RGB-D images, organized by title in different splits according to the type of objects appearing (table, kitchen, office, mix). Annotations contain bounding boxes for object detection and pixel-level masks for semantic / instance segmentation.
+This will generate two sub-folders, namely: a) *object*, that containts object-level RGB-D images aimed for object recognition task, cropped from the original scene frames according to their bounding box annotation, and b) *scene*, that contains scene-level RGB-D images, organized by title in different splits according to the type of objects appearing (table, kitchen, office, mix). Annotations contain bounding boxes for object detection and pixel-level masks for semantic / instance segmentation tasks.
 
 The object-level directory structure follows the classic *ImageFolder* class-per-folder style:
 ```bash
@@ -65,7 +65,7 @@ Object Detection
 #      - class_names.txt
 ```
 
-Semantic Segmentation
+Semantic / Instance Segmentation
 ```bash
 #  - ./HOTS/scene
 #    - SemanticSegmentation
@@ -78,12 +78,7 @@ Semantic Segmentation
 #      - SegmentationClassVisualization
 #        - kitchen_5_top_raw_0.jpg
 #        - ...
-#      - class_names.txt
-```
-
-Instance Segmentation
-```bash
-#  - ./HOTS/scene
+#
 #    - InstanceSegmentation
 #      - SegmentationObject
 #        - kitchen_5_top_raw_0.npy
@@ -94,5 +89,5 @@ Instance Segmentation
 #      - SegmentationObjectVisualization
 #        - kitchen_5_top_raw_0.jpg
 #        - ...
-#      - class_names.txt
+#    - class_names.txt
 ``` 
