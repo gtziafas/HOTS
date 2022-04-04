@@ -98,7 +98,7 @@ The -Class folder contains raw pixel-level masks using the unique index of each 
 
 
 ## APIs
-Python API for loading the datasets. Use transform=True to tensorize the data. Alternatively, pass a ```torchvision.transforms``` object to transform the data according to your desired preprocessing.
+Python API for loading the datasets. Use ```transform=True``` to tensorize the data. Alternatively, pass a ```torchvision.transforms``` object to transform the data according to your desired preprocessing.
 
 Object-level:
 ```python
