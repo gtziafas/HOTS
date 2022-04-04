@@ -92,3 +92,5 @@ Semantic / Instance Segmentation
 #        - ...
 #    - class_names.txt
 ``` 
+
+<img src="assets/obj_det.gif" width="250"/> <img src="assets/sem_segm.gif" width="250"/> <img src="assets/inst_segm.gif" width="250"/> 
