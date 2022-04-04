@@ -21,7 +21,6 @@ This will generate two sub-folders, namely: a) *object*, that containts object-l
 The object-level directory structure follows the classic *ImageFolder* class-per-folder style:
 ```bash
 #  - object
-#    - RGB
 #      - apple
 #        - 0.png
 #        - 1.png
@@ -31,9 +30,6 @@ The object-level directory structure follows the classic *ImageFolder* class-per
 #        - 0.png
 #        - 1.png
 #        - ...
-#     - Depth
-#        - ...
-#     - labels.txt
 ```
 
 The scene-level directory follows the VOC-style structure for each task
