@@ -96,3 +96,5 @@ The -Class folder contains raw pixel-level masks using the unique index of each 
 | :---------------------: |:---------------------:| :---------------------:|
 | <img src="assets/obj_det.gif" width="400"/> | <img src="assets/sem_segm.gif" width="400"/> |<img src="assets/inst_segm.gif" width="400"/> |
 
+
+<img src="assets/obj_det.gif" width="400"/> <img src="assets/sem_segm.gif" width="400"/> <img src="assets/inst_segm.gif" width="400"/>
