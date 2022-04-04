@@ -6,7 +6,7 @@ HOTS in an ongoing effort to collect an RGB-D dataset aimed for benchmarking vis
 
 The dataset enumerates a total of 46 object instances organized as
 | Annotation        | Number           | Classes  |
-| ------------- |:-------------:| -----:|
+| ------------- |:-------------:| :-----:|
 | Supercategory      | 5 | edible products(13), electronics(5), fruits(6), kitchenware(11), stationery(11) | 
 | Category    | 25   |   apple(1), banana(1), book(3), bowl(1), soda can(5), cup(3), fork(2), juice box(3), keyboard(1), knife(1), laptop(1), lemon(1), marker(2), milk box(2), monitor(1), mouse(2), orange(1), peach(1), pear(1), pen(3), plate(2), pringles box(3), scissors(2), spoon(2), stapler(1)   |
 | Color | 11      |    red(6), yellow(4), blue(5), white(6), purple(2), green(4), black(9), transparent(1), silver(6), orange(2), pink(1) |
