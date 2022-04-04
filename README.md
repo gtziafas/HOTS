@@ -13,21 +13,66 @@ The dataset enumerates a total of 46 object instances organized as
 | Material | 7      |    organic(6), paper(7), ceramic(5), aluminium(5), glass(1), metal(8), plastic(14) |
 
 # Data Structure
-
+Run the download script to retrieve the dataset. 
 ```bash
-# This will generate a HOTS directory in the root of the repo following a VOC-like structure:
+python download_dataset.py --source_dir PATH_TO_REPO_ROOT
+```
+This will generate two sub-folders, namely: a) *object*, that containts object-level RGB-D images, cropped from the original scene frames according to their bounding box annotation, and, b) *scene*, that contains scene-level RGB-D images, organized by title in different splits according to the type of objects appearing (table, kitchen, office, mix). Annotations contain bounding boxes for object detection and pixel-level masks for semantic / instance segmentation.
+
+The object-level directory structure follows the classic *ImageFolder* class-per-folder style:
+```bash
 #  - object
-#
-#     - apple
-#       - 0.png
-#       - 1.png
-#       - ...
-#      ...
-#     - stapler
+#    - RGB
+#      - apple
 #        - 0.png
 #        - 1.png
 #        - ...
-#   - data_dataset_voc/JPEGImages
-#   - data_dataset_voc/SegmentationClass
-#   - data_dataset_voc/SegmentationClassVisualization
-./labelme2voc.py data_annotated data_dataset_voc --labels labels.txt
+#      ...
+#      - stapler
+#        - 0.png
+#        - 1.png
+#        - ...
+#     - Depth
+#        - ...
+#     - labels.txt
+```
+
+The scene-level directory follows the VOC-style structure for each task
+```bash
+#  - scene
+#    - RGB
+#      - kitchen_5_top_raw_0.png
+#      - ...
+#      - table_8_top_raw_9.png
+#    - Depth
+#      - kitchen_5_top_raw_0.npy
+#      - ...
+#      - table_8_top_raw_9.npy
+#    - ObjectDetection
+#      - Annotations
+#        - kitchen_5_top_raw_0.xml
+#        - ...
+#      - AnnotationsVisualization
+#        - kitchen_5_top_raw_0.jpg
+#        - ...
+#    - SemanticSegmentation
+#      - SegmentationClass
+#        - kitchen_5_top_raw_0.npy
+#        - ...
+#      - SegmentationClassPNG
+#        - kitchen_5_top_raw_0.png
+#        - ...
+#      - SegmentationClassVisualization
+#        - kitchen_5_top_raw_0.jpg
+#        - ...
+#    - InstanceSegmentation
+#      - SegmentationObject
+#        - kitchen_5_top_raw_0.npy
+#        - ...
+#      - SegmentationObjectPNG
+#        - kitchen_5_top_raw_0.png
+#        - ...
+#      - SegmentationObjectVisualization
+#        - kitchen_5_top_raw_0.jpg
+#        - ...
+``` 
