@@ -122,12 +122,4 @@ image, target = train_dataset[0]
 ```
 Similarly, use ```transform=True``` or a pre-defined ```torchvision``` transform to preprocess the raw image data. Using ```transform=True``` will also tensorize the values of the ```target``` dictionary and will additionaly normalize bounding box coordinates according to the ```image_size``` field.
 
-## TODO
-* ~~Extract point clouds from RGB-D pairs~~ and include a load API for them
-* ~~Preset train-test splits for object dataset~~
-* Preset train-test splits for scenes dataset (currently random split with fixed seed)
-* Add benchmarks for object recognition / detection, semantic / instance segmentation
-* Add data and load API for scene-level scene graphs
-
-
 
